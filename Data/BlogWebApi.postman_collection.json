@@ -361,6 +361,72 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJzcHJpbmdib290X3Jlc3RfYXBpIiwiaWF0IjoxNjcwNTAxOTEzLCJleHAiOjE2NzExMDY3MTN9.GsHyA-84YAJbVZ-i7l9FuO9nnsP8b4zYAtxvgR0JImY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sku\": \"99\",\r\n  \"name\": \"MacBook Air\",\r\n  \"description\": \"App Tracking Transparency lets you decide which apps are allowed to track your activity — it’s just one example of how iPhone is designed to put you in control of what you share and who you share it with\",\r\n  \"active\": true,\r\n  \"imageUrl\": \"mac.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/search?query=mac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "mac"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

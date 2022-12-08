@@ -77,6 +77,36 @@ INSERT INTO `posts` VALUES (1,'The entries were maintained by featured Beanie Ba
 UNLOCK TABLES;
 
 --
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `products` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `active` bit(1) NOT NULL,
+  `date_created` datetime(6) DEFAULT NULL,
+  `date_updated` datetime(6) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `sku` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,_binary '','2022-12-08 19:19:47.806653','2022-12-08 19:19:47.806653','App Tracking Transparency lets you decide which apps are allowed to track your activity — it’s just one example of how iPhone is designed to put you in control of what you share and who you share it with','iphone.jpg','iPhone 14','12'),(2,_binary '','2022-12-08 19:20:44.884347','2022-12-08 19:20:44.884347','App Tracking Transparency lets you decide which apps are allowed to track your activity — it’s just one example of how iPhone is designed to put you in control of what you share and who you share it with','mac.jpg','MacBook Air','99');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `roles`
 --
 
@@ -168,4 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-08 18:55:21
+-- Dump completed on 2022-12-08 19:24:01
