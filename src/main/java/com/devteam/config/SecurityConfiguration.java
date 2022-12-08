@@ -43,7 +43,7 @@ public class SecurityConfiguration {
                 .and()
                 .authorizeRequests(auth -> auth
                         .antMatchers(HttpMethod.GET, "/api/**").permitAll()
-                        .antMatchers("/api/auth/login", "/api/auth/register", "/api/products/**").permitAll()
+                        .antMatchers("/api/auth/login", "/api/auth/register", "/api/products/**", "/api/orders/**").permitAll()
                         .antMatchers("/v3/api-docs/**").permitAll()
                         .antMatchers("/swagger-ui/**").permitAll()
                         .anyRequest().authenticated());

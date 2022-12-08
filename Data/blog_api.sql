@@ -48,6 +48,66 @@ INSERT INTO `comments` VALUES (1,'2022-12-08 18:43:40.824739','abama@gmail.com',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `date_created` datetime(6) DEFAULT NULL,
+  `last_updated` datetime(6) DEFAULT NULL,
+  `order_tacking_number` varchar(255) DEFAULT NULL,
+  `shopping_cart_id` bigint DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `total_price` decimal(19,2) DEFAULT NULL,
+  `total_quantity` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (5,'2022-12-08 19:58:20.872693','2022-12-08 19:58:20.872693','d42570ad-d14a-4685-b247-d31ef8c5ccf1',1,'INPROGRESS',999.00,3);
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payments`
+--
+
+DROP TABLE IF EXISTS `payments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `payments` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `card_name` varchar(255) DEFAULT NULL,
+  `card_number` varchar(255) DEFAULT NULL,
+  `cvc` int NOT NULL,
+  `expiry_month` int NOT NULL,
+  `expiry_year` int NOT NULL,
+  `order_id` bigint DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payments`
+--
+
+LOCK TABLES `payments` WRITE;
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` VALUES (1,'NGUYEN TRI QUANG','1234 4564 7890',123,9,2026,5,'DEBIT');
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `posts`
 --
 
@@ -198,4 +258,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-08 19:24:01
+-- Dump completed on 2022-12-08 20:04:11

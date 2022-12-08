@@ -427,6 +427,45 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJzcHJpbmdib290X3Jlc3RfYXBpIiwiaWF0IjoxNjcwNTAzNTY1LCJleHAiOjE2NzExMDgzNjV9.CIddMUs4qkuY5R0icluzuWr9km57dGfmve4j1jRM3p0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"order\": {\r\n    \"totalQuantity\": 3,\r\n    \"totalPrice\": 999,\r\n    \"shoppingCartId\": 1\r\n  },\r\n  \"payment\": {\r\n    \"type\": \"DEBIT\",\r\n    \"cardName\": \"NGUYEN TRI QUANG\",\r\n    \"cardNumber\": \"1234 4564 7890\",\r\n    \"expiryYear\": 2026,\r\n    \"expiryMonth\": 9,\r\n    \"cvc\": 123\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
