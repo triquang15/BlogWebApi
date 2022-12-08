@@ -21,7 +21,7 @@ public class SwaggerConfig {
                 .info(new Info().title("Spring Boot Blog REST API")
                         .description("Spring Boot Blog REST API Documentation")
                         .version("1.0")
-                        .contact(new Contact().name("Roman Seveljov").email("roman084@gmx.com"))
+                        .contact(new Contact().name("Tri Quang").email("triquang.74qt@gmail.com"))
                         .description("Blog API Wiki Documentation")
                         .license(new License().name("License of API").url("API License URL")));
     }

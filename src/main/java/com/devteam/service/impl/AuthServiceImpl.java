@@ -16,9 +16,9 @@ import com.devteam.dto.LoginDto;
 import com.devteam.dto.LoginResponseDto;
 import com.devteam.dto.RegisterDto;
 import com.devteam.dto.UserDto;
+import com.devteam.dto.UserMapper;
 import com.devteam.entity.Role;
 import com.devteam.entity.User;
-import com.devteam.mapper.UserMapper;
 import com.devteam.repository.RoleRepository;
 import com.devteam.repository.UserRepository;
 import com.devteam.security.UserDetailsImpl;
@@ -42,7 +42,7 @@ public class AuthServiceImpl implements AuthService {
 
 
     @Override
-    public ResponseEntity<LoginResponseDto> login(LoginDto dto) {
+	public ResponseEntity<LoginResponseDto> login(LoginDto dto) {
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(dto.getUsernameOrEmail(), dto.getPassword())
         );
@@ -64,6 +64,8 @@ public class AuthServiceImpl implements AuthService {
 
         User user = new User();
         BeanUtils.copyProperties(dto, user);
+        user.setFirstName(dto.getFirstname());
+        user.setLastName(dto.getLastname());
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
         addRolesToUser(user);
         userRepository.save(user);

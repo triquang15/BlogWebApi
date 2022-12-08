@@ -1,9 +1,8 @@
-package com.devteam.mapper;
+package com.devteam.dto;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.devteam.dto.CommentDto;
 import com.devteam.entity.Comment;
 
 @Mapper

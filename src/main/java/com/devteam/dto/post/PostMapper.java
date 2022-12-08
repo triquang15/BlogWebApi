@@ -1,10 +1,9 @@
-package com.devteam.mapper;
+package com.devteam.dto.post;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.devteam.dto.post.PostDto;
 import com.devteam.entity.Post;
 
 @Mapper

@@ -13,12 +13,12 @@ import org.springframework.stereotype.Service;
 
 import com.devteam.dto.post.CreatePostDto;
 import com.devteam.dto.post.PostDto;
+import com.devteam.dto.post.PostMapper;
 import com.devteam.dto.post.PostResponseDto;
 import com.devteam.dto.post.UpdatePostDto;
 import com.devteam.entity.Post;
 import com.devteam.exception.BlogApiException;
 import com.devteam.exception.ResourceNotFoundException;
-import com.devteam.mapper.PostMapper;
 import com.devteam.repository.CommentRepository;
 import com.devteam.repository.PostRepository;
 import com.devteam.service.PostService;

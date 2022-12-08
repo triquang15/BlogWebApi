@@ -17,8 +17,8 @@ public class RegisterDto {
 
     @NotEmpty(message = "Email is required!")
     @Email(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
-            flags = Pattern.Flag.CASE_INSENSITIVE,
-            message = "Email must be a well-formed email address!")
+    flags = Pattern.Flag.CASE_INSENSITIVE,
+    message = "Email must be a well-formed email address!")
     private String email;
 
     @NotEmpty(message = "Username is required!")
@@ -27,8 +27,7 @@ public class RegisterDto {
     @NotEmpty
     @NotEmpty(message = "Password is required!")
     private String password;
-
-
+    
     private void setFirstname(String firstname) {
         this.firstname = firstname.trim();
     }
@@ -44,4 +43,5 @@ public class RegisterDto {
     private void setUsername(String username) {
         this.username = username.trim();
     }
+
 }

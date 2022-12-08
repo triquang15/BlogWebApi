@@ -6,12 +6,12 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import com.devteam.dto.CommentDto;
+import com.devteam.dto.CommentMapper;
 import com.devteam.dto.UpdateCommentDto;
 import com.devteam.entity.Comment;
 import com.devteam.entity.Post;
 import com.devteam.exception.BlogApiException;
 import com.devteam.exception.ResourceNotFoundException;
-import com.devteam.mapper.CommentMapper;
 import com.devteam.repository.CommentRepository;
 import com.devteam.repository.PostRepository;
 import com.devteam.service.CommentService;
