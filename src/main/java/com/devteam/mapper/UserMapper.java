@@ -7,6 +7,7 @@ import org.mapstruct.factory.Mappers;
 import com.devteam.dto.RegisterDto;
 import com.devteam.dto.UserDto;
 import com.devteam.entity.User;
+import com.devteam.security.UserDetailsImpl;
 
 @Mapper
 public interface UserMapper {
