@@ -11,11 +11,13 @@ import com.devteam.entity.User;
 @Mapper
 public interface UserMapper {
 
-    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
+	UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    RegisterDto dtoToEntity(User user);
-    User entityToDto(RegisterDto dto);
-    @Mapping(target = "user.roles", ignore = true)
-    UserDto userDetailsToUserDto(UserDetailsImpl user);
+	RegisterDto dtoToEntity(User user);
+
+	User entityToDto(RegisterDto dto);
+
+	@Mapping(target = "user.roles", ignore = true)
+	UserDto userDetailsToUserDto(UserDetailsImpl user);
 
 }
